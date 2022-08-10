@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       </Head>
       <header className="h-[256px] bg-black px-6 py-12">
         <div className="max-w-5xl margin-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row space-y-8 md:space-y-0 justify-between items-center">
             <h2 className="text-slate-50 text-4xl font-medium">
               {moment(selectedDate).format("MMMM")}
             </h2>

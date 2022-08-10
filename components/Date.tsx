@@ -14,7 +14,7 @@ const Date: React.FC<IDate> = ({ day, type, label, ...rest }) => {
     <div className="flex flex-col -space-x-2 cursor-pointer" {...rest}>
       <span
         className={classname(
-          "text-9xl",
+          "text-7xl md:text-9xl",
           type === "primary"
             ? "text-teal-500"
             : "text-slate-500 hover:text-slate-400"
@@ -27,6 +27,7 @@ const Date: React.FC<IDate> = ({ day, type, label, ...rest }) => {
           marginLeft: "8px",
         }}
         className={classname(
+          "text-sm md:text-base",
           type === "primary" ? "text-slate-50" : "text-slate-500"
         )}
       >
