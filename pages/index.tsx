@@ -10,8 +10,6 @@ import { useAssessmentTable } from "../services/assessmentTable";
 import AssessmentsTable from "../components/AssessmentsTable";
 
 const Home: NextPage = () => {
-  const [title, setTitle] = useState("Class Routine");
-
   const [today, setToday] = useState(moment().format("YYYY-MM-DD").toString());
   const [selectedDate, setSelectedDate] = useState(
     moment().format("YYYY-MM-DD").toString()
@@ -25,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{title} - 075BCTAB</title>
+        <title>Class Routines - 075BCTAB</title>
       </Head>
       <header className="h-[256px] bg-black px-6 py-12">
         <div className="max-w-5xl margin-auto">
