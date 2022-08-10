@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </header>
-      <section className="max-w-5xl margin-auto py-12">
+      <section className="max-w-5xl margin-auto py-12 px-4">
         <div className="flex space-x-12">
           <p
             className={classname(
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
           </p>
         </div>
       </section>
-      <section className="max-w-5xl margin-auto">
+      <section className="max-w-5xl margin-auto px-4">
         {selectedIndex === 0 && <Routine data={data} isLoading={isLoading} />}
         {selectedIndex === 1 && (
           <AssessmentsTable
