@@ -18,7 +18,7 @@ const AssessmentsTable: React.FC<IAssessmentTable> = ({ data, isLoading }) => {
     if (data) {
       return (
         <div className="max-w-5xl margin-auto">
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-8 overflow-x-scroll">
             {data?.map((assessment: any) => (
               <RichText
                 key={assessment.id}
