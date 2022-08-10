@@ -1,13 +1,14 @@
 import moment from "moment";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Date from "../components/Date";
 import { useRoutine } from "../services/routine";
 import classname from "classname";
 import Routine from "../components/Routine";
 import { useAssessmentTable } from "../services/assessmentTable";
 import AssessmentsTable from "../components/AssessmentsTable";
+import { useQueryClient, QueryCache } from "@tanstack/react-query";
 
 const Home: NextPage = () => {
   const [today, setToday] = useState(moment().format("YYYY-MM-DD").toString());
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
   const { data: assessmentsData, isLoading: isAssessmentsLoading } =
     useAssessmentTable();
 
+  console.log(selectedDate);
   return (
     <>
       <Head>
@@ -36,9 +38,9 @@ const Home: NextPage = () => {
                 day={moment().format("DD")}
                 type={selectedDate === today ? "primary" : "secondary"}
                 label="TODAY"
-                onClick={() =>
-                  setSelectedDate(moment().format("YYYY-MM-DD").toString())
-                }
+                onClick={() => {
+                  setSelectedDate(moment().format("YYYY-MM-DD").toString());
+                }}
               />
               <span className="border-r-2 border-slate-500"></span>
               <Date
@@ -50,11 +52,11 @@ const Home: NextPage = () => {
                     : "secondary"
                 }
                 label="TOMORROW"
-                onClick={() =>
+                onClick={() => {
                   setSelectedDate(
                     moment().add(1, "days").format("YYYY-MM-DD").toString()
-                  )
-                }
+                  );
+                }}
               />
             </div>
           </div>

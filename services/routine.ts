@@ -17,7 +17,7 @@ export const getRoutineQuery = gql`
 `;
 
 export const useRoutine = (date: any) => {
-  return useQuery(["routine"], async () => {
+  return useQuery(["routine", date], async () => {
     const { routine } = await cmsApi.request(getRoutineQuery, {
       routineDate: date,
     });
