@@ -8,3 +8,8 @@
 body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
+.margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
