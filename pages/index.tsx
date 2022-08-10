@@ -6,22 +6,21 @@ import Date from "../components/Date";
 import { useRoutine } from "../services/routine";
 import classname from "classname";
 import Routine from "../components/Routine";
+import { useAssessmentTable } from "../services/assessmentTable";
+import AssessmentsTable from "../components/AssessmentsTable";
 
 const Home: NextPage = () => {
   const [title, setTitle] = useState("Class Routine");
 
   const [today, setToday] = useState(moment().format("YYYY-MM-DD").toString());
-
   const [selectedDate, setSelectedDate] = useState(
     moment().format("YYYY-MM-DD").toString()
   );
-
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  console.log(selectedDate);
   const { data, isLoading } = useRoutine(selectedDate);
-
-  console.log(data);
+  const { data: assessmentsData, isLoading: isAssessmentsLoading } =
+    useAssessmentTable();
 
   return (
     <>
@@ -91,7 +90,12 @@ const Home: NextPage = () => {
       </section>
       <section className="max-w-5xl margin-auto">
         {selectedIndex === 0 && <Routine data={data} isLoading={isLoading} />}
-        {selectedIndex === 1 && <div></div>}
+        {selectedIndex === 1 && (
+          <AssessmentsTable
+            data={assessmentsData}
+            isLoading={isAssessmentsLoading}
+          />
+        )}
       </section>
     </>
   );

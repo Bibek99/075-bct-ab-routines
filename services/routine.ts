@@ -25,12 +25,3 @@ export const useRoutine = (date: any) => {
     return routine;
   });
 };
-
-// export const getRoutine = async (date = "2022-08-10") => {
-//   const { routine } = await cmsApi.request(
-//     getRoutineQuery,
-//     getRoutineVariables
-//   );
-
-//   return routine;
-// };

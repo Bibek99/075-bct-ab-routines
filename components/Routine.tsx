@@ -28,7 +28,7 @@ const Routine: React.FC<IRoutine> = ({ data, isLoading }) => {
     } else {
       return (
         <div className="max-w-5xl margin-auto">
-          No Routine published for the date
+          Oops, no published Data found. Contact CR.
         </div>
       );
     }
