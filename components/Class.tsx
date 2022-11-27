@@ -12,13 +12,18 @@ interface IClass {
   };
 }
 
-const classNames: any = {
-  cn: "Computer Network",
-  dsap: "Digital Signal Analysis and Processing",
-  ees: "Energy, Environment and Society",
-  onm: "Organization and Management",
-  pm: "Project Management",
-  ds: "Distributed Systems",
+type ClassType = {
+  [key: string]: string;
+};
+
+const classNames: ClassType = {
+  ini: "Internet & Intranet",
+  is: "Information System",
+  epp: "Engineering Professional Practice",
+  snm: "Simulation & Modeling",
+  project: "Major Project",
+  e2: "Elective 2",
+  e3: "Elective 3",
 };
 
 const classesType = {

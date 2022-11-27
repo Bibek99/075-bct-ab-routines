@@ -1,14 +1,13 @@
 import moment from "moment";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Date from "../components/Date";
 import { useRoutine } from "../services/routine";
 import classname from "classname";
 import Routine from "../components/Routine";
 import { useAssessmentTable } from "../services/assessmentTable";
 import AssessmentsTable from "../components/AssessmentsTable";
-import { useQueryClient, QueryCache } from "@tanstack/react-query";
 
 const Home: NextPage = () => {
   const [today, setToday] = useState(moment().format("YYYY-MM-DD").toString());
@@ -21,7 +20,6 @@ const Home: NextPage = () => {
   const { data: assessmentsData, isLoading: isAssessmentsLoading } =
     useAssessmentTable();
 
-  console.log(selectedDate);
   return (
     <>
       <Head>
